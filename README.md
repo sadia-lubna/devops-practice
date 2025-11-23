@@ -30,7 +30,29 @@ Building a cloud-native web application with automated deployment pipeline.
 - **Public IP:** [Your Elastic IP] (Permanent)
 - **Security:** SSH key-only authentication, restricted access
 
+## Infrastructure Architecture
 
----
-*Learning in public. Follow my progress!*
-```
+### Current Setup
+
+┌─────────────────────────────────────┐
+│         AWS Cloud (Stockholm)       │
+│                                     │
+│  ┌────────────────────────────────┐ │
+│  │  EC2 Instance (t3.micro)       │ │
+│  │  Ubuntu 22.04 LTS              │ │
+│  │                                │ │
+│  │  Public IP: 51.20.244.160      │ │
+│  │  (Elastic IP - Permanent)      │ │
+│  │                                │ │
+│  │  Services:                     │ │
+│  │  ├─ Apache2 (Port 80)          │ │
+│  │  ├─ SSH (Port 22)              │ │
+│  │  └─ Custom monitoring scripts  │ │
+│  │                                │ │
+│  │  Security:                     │ │
+│  │  ├─ Key-based authentication   │ │
+│  │  ├─ IP-restricted SSH access   │ │
+│  │  └─ Security Group firewall    │ │
+│  └────────────────────────────────┘ │
+└─────────────────────────────────────┘
+
